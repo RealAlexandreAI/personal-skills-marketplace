@@ -5,13 +5,13 @@
     "email": ""
   },
   "metadata": {
-    "description": "Personal skills, commands, and rules collection",
+    "description": "Personal skills collection for changelog, code review, error resolution, frontend design",
     "version": "1.0.0"
   },
   "plugins": [
     {
       "name": "personal-skills",
-      "description": "All-in-one collection: skills (changelog, code review, error resolution, frontend design), commands (git workflow, documentation), and rules (project standards)",
+      "description": "Skills collection: changelog-generator, code-reviewer, error-resolver, frontend-design, skill-creator",
       "source": "./",
       "strict": false,
       "skills": [
@@ -20,74 +20,6 @@
         "./skills/error-resolver",
         "./skills/frontend-design",
         "./skills/skill-creator"
-      ],
-      "commands": [
-        {
-          "name": "add-command",
-          "description": "Add a new custom command to workspace",
-          "source": "./commands/add_command.md"
-        },
-        {
-          "name": "create-doc",
-          "description": "Create documentation following Diátaxis framework",
-          "source": "./commands/create_doc.md"
-        },
-        {
-          "name": "git-commit",
-          "description": "Git commit with conventional-changelog style",
-          "source": "./commands/git_commit.md"
-        },
-        {
-          "name": "git-push",
-          "description": "Complete git workflow with branch and PR",
-          "source": "./commands/git_push.md"
-        },
-        {
-          "name": "issue",
-          "description": "Create GitHub issue using CLI",
-          "source": "./commands/issue.md"
-        },
-        {
-          "name": "no-spec",
-          "description": "Skip spec workflow, execute directly",
-          "source": "./commands/no_spec.md"
-        },
-        {
-          "name": "spec",
-          "description": "Force complete spec workflow",
-          "source": "./commands/spec.md"
-        },
-        {
-          "name": "translate",
-          "description": "Translate documentation to Chinese",
-          "source": "./commands/translate.md"
-        }
-      ],
-      "rules": [
-        {
-          "name": "project-rules",
-          "description": "Project coding standards and git commit conventions",
-          "source": "./rules/project-rules.mdc",
-          "alwaysApply": false
-        },
-        {
-          "name": "documentation-rules",
-          "description": "Documentation standards following Diátaxis framework",
-          "source": "./rules/documentation-rules.mdc",
-          "alwaysApply": true
-        },
-        {
-          "name": "interactive-dev",
-          "description": "Interactive development workflow (research → ideation → plan → execute → review)",
-          "source": "./rules/interactive-dev.mdc",
-          "alwaysApply": false
-        },
-        {
-          "name": "font-awesome-icons",
-          "description": "FontAwesome icons reference for documentation",
-          "source": "./rules/font-awsome-icons.mdc",
-          "alwaysApply": true
-        }
       ]
     }
   ]
