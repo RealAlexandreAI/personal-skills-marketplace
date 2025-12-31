@@ -1,0 +1,104 @@
+---
+globs: *
+alwaysApply: true
+---
+
+## Code Standards
+
+### Language Requirements
+- **All code and comments must be written in English by default**
+- Variable names, function names, class names, and all identifiers should use English
+- Comments, documentation strings, and inline explanations should be in English
+- Error messages and log outputs should be in English
+- Only user-facing text (UI labels, user messages) may be localized as needed
+
+### Code Quality
+- Follow standard coding conventions for the respective programming language
+- Use meaningful and descriptive names for variables and functions
+- Write clear and concise comments explaining complex logic
+- Maintain consistent code formatting and style
+
+### Git Commit Standards (Mandatory)
+- **Git commit messages must be in English using conventional-changelog style**
+- **Commit message format:** `type(scope): description`, e.g., `feat(auth): add user authentication system`
+- **Emoji characters can be added after feat(xxx):**
+- **Chinese characters are prohibited in commit messages**
+
+## Workflow
+
+You will intelligently determine which development mode to use based on user requirements, with spec mode being the default approach.
+
+**Intelligent Decision Criteria:**
+- **Use spec**: New feature development, complex architecture design, multi-module integration, database/UI design
+- **Skip spec**: Simple fixes, documentation updates, configuration changes, code refactoring
+
+### Workflow Command Control
+
+Users can also request specific modes through commands
+
+**Available Commands:**
+- **/spec** - Force use of complete spec workflow
+- **/no_spec** - Skip spec workflow, execute directly
+- **/help** - Show command help
+- **/list_commands** - List all available slash commands
+- **/git_push** - Git commit and push workflow
+
+
+The following is the spec workflow:
+<spec_workflow>
+0. Please note! You must follow the rules below, and each phase must be confirmed by me before proceeding to the next phase;
+1. If you determine that my input presents a new requirement, you can work independently according to standard software engineering practices, confirming with me when necessary, and can use the interactiveDialog tool to collect information
+2. Whenever I input a new requirement, to standardize requirement quality and acceptance criteria, you must first clarify the problem and requirements, and must confirm with me before proceeding to the next phase
+3. Requirements document and acceptance criteria design: First complete the requirements design using the EARS simple requirements syntax method. If you determine that the requirements involve frontend pages, you need to determine the design style and color scheme in advance in the requirements, and must confirm the requirement details with me. After final confirmation, finalize the requirements, then proceed to the next phase, save in `dev-tools/specs/spec_name/requirements.md`, and after confirming with me, continue to the next phase. Reference format as follows:
+
+```markdown
+# Requirements Document
+
+## Introduction
+
+Requirement description
+
+## Requirements
+
+### Requirement 1 - Requirement Name
+
+**User Story:** User story content
+
+#### Acceptance Criteria
+
+1. Use EARS descriptive clauses: While <optional precondition>, when <optional trigger>, the <system name> shall <system response>, for example: When "mute" is selected, the laptop shall suppress all audio output.
+2. ...
+...
+```
+4. Technical solution design: After completing the requirements design, you will design the technical solution for the requirements based on the current technical architecture and the previously confirmed requirements, concisely but accurately describing the technical architecture (such as architecture, technology stack, technology selection, database/interface design, testing strategy, security), and can use mermaid for drawing when necessary, save in `dev-tools/specs/spec_name/design.md`, and after confirming with me, proceed to the next phase
+5. Task breakdown: After completing the technical solution design, you will break down specific tasks to be done based on the requirements document and technical solution, and must confirm with me clearly, save in `dev-tools/specs/spec_name/tasks.md`, and after confirming with me, proceed to the next phase to begin formal task execution, while timely updating task status, executing as independently and autonomously as possible to ensure efficiency and quality
+
+Task reference format as follows:
+
+``` markdown
+# Implementation Plan
+
+- [ ] 1. Task information
+  - Specific things to do
+  - ...
+  - _Requirement: Related requirement point number
+
+```
+</spec_workflow>
+
+## Slash Commands
+
+### `/list_commands`
+**Function:** List all available slash commands
+**Trigger:** When user inputs `/list_commands`
+**Behavior:** Display all available commands and their descriptions
+
+### `/git_push`
+**Function:** Git commit and push workflow
+**Trigger:** When user inputs `/git_push`
+**Behavior:**
+1. Commit code using conventional-changelog style
+2. Commit to a feature branch (e.g., feature/xxx) instead of directly to main
+3. Execute `git push origin <branch-name>`
+4. Automatically create PR after push
+5. Switch back to main branch after PR creation

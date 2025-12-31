@@ -1,44 +1,93 @@
 {
-  "name": "anthropic-agent-skills",
+  "name": "alexandre-owned",
   "owner": {
-    "name": "Keith Lazuka",
-    "email": "klazuka@anthropic.com"
+    "name": "Alexandre",
+    "email": ""
   },
   "metadata": {
-    "description": "Anthropic example skills",
+    "description": "Personal skills, commands, and rules collection",
     "version": "1.0.0"
   },
   "plugins": [
     {
-      "name": "document-skills",
-      "description": "Collection of document processing suite including Excel, Word, PowerPoint, and PDF capabilities",
+      "name": "personal-skills",
+      "description": "All-in-one collection: skills (changelog, code review, error resolution, frontend design), commands (git workflow, documentation), and rules (project standards)",
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/xlsx",
-        "./skills/docx",
-        "./skills/pptx",
-        "./skills/pdf"
-      ]
-    },
-    {
-      "name": "example-skills",
-      "description": "Collection of example skills demonstrating various capabilities including skill creation, MCP building, visual design, algorithmic art, internal communications, web testing, artifact building, Slack GIFs, and theme styling",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/algorithmic-art",
-        "./skills/brand-guidelines",
-        "./skills/canvas-design",
-        "./skills/doc-coauthoring",
+        "./skills/changelog-generator",
+        "./skills/code-reviewer",
+        "./skills/error-resolver",
         "./skills/frontend-design",
-        "./skills/internal-comms",
-        "./skills/mcp-builder",
-        "./skills/skill-creator",
-        "./skills/slack-gif-creator",
-        "./skills/theme-factory",
-        "./skills/web-artifacts-builder",
-        "./skills/webapp-testing"
+        "./skills/skill-creator"
+      ],
+      "commands": [
+        {
+          "name": "add-command",
+          "description": "Add a new custom command to workspace",
+          "source": "./commands/add_command.md"
+        },
+        {
+          "name": "create-doc",
+          "description": "Create documentation following Diátaxis framework",
+          "source": "./commands/create_doc.md"
+        },
+        {
+          "name": "git-commit",
+          "description": "Git commit with conventional-changelog style",
+          "source": "./commands/git_commit.md"
+        },
+        {
+          "name": "git-push",
+          "description": "Complete git workflow with branch and PR",
+          "source": "./commands/git_push.md"
+        },
+        {
+          "name": "issue",
+          "description": "Create GitHub issue using CLI",
+          "source": "./commands/issue.md"
+        },
+        {
+          "name": "no-spec",
+          "description": "Skip spec workflow, execute directly",
+          "source": "./commands/no_spec.md"
+        },
+        {
+          "name": "spec",
+          "description": "Force complete spec workflow",
+          "source": "./commands/spec.md"
+        },
+        {
+          "name": "translate",
+          "description": "Translate documentation to Chinese",
+          "source": "./commands/translate.md"
+        }
+      ],
+      "rules": [
+        {
+          "name": "project-rules",
+          "description": "Project coding standards and git commit conventions",
+          "source": "./rules/project-rules.mdc",
+          "alwaysApply": false
+        },
+        {
+          "name": "documentation-rules",
+          "description": "Documentation standards following Diátaxis framework",
+          "source": "./rules/documentation-rules.mdc",
+          "alwaysApply": true
+        },
+        {
+          "name": "interactive-dev",
+          "description": "Interactive development workflow (research → ideation → plan → execute → review)",
+          "source": "./rules/interactive-dev.mdc",
+          "alwaysApply": false
+        },
+        {
+          "name": "font-awesome-icons",
+          "description": "FontAwesome icons reference for documentation",
+          "source": "./rules/font-awsome-icons.mdc",
+          "alwaysApply": true
+        }
       ]
     }
   ]
