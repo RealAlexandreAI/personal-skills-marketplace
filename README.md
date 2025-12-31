@@ -37,6 +37,14 @@ A modular collection of skills, commands, and rules to extend Claude's capabilit
 | `/spec` | Force complete spec workflow |
 | `/translate` | Translate documentation to Chinese |
 
+**`/create-doc` sub-commands** (called internally):
+| Sub-command | Description |
+|-------------|-------------|
+| `doc/tutorial` | Create learning-oriented tutorial |
+| `doc/howto` | Create task-oriented how-to guide |
+| `doc/reference` | Create technical reference documentation |
+| `doc/explanation` | Create concept explanation documentation |
+
 ### Rules (4)
 
 | Rule | Description | Auto Apply |
